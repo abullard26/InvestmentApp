@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.dropdownlabel{
+  font-weight: 600;
+  padding:5px;
+  color:white;
+  border-radius: 10px;
+}
+
+ExpandLess {
+  background-color: blue;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+
+.rotate {
+  animation: rotate 0.2s linear 1 alternate-reverse;
+}
+
+.selected{
+  background-color: rgb(241, 241, 241);
+}
+
+button{
+  font-weight: bold;
+  color: rgb( 73, 80, 87);
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.on{
+  transition: background-color 0.5s ease-in;
+  background-color: rgb(241, 241, 241);
+}
+
+.off{
+  transition: background-color 0.5s ease-in;
+  background-color: white;
+}
+
+
+@keyframes fadein {
+  from{ 
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from{ 
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.full{
+  animation: fadein 0.5s 1 ease-in;
+}
+
+.short.fadeOut{
+  animation: fadeOut 0.25s 1 ease-in;
+}
+
+.full.fadeOut{
+  animation: fadeOut 0.25s 1 ease-in;
+}
+
+.short{
+  animation: fadein 0.5s 1 ease-in;
+}
