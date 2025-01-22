@@ -120,7 +120,7 @@ function Detail({label, text}){
 }
 
 function DetailList({details}){
-
+  //style for detail list
   const style = {
     m: 2,
     width: '90%',
@@ -157,18 +157,24 @@ function DetailList({details}){
 
 function App() {
 
+  //array with boolean variable that track if a dropdown is open or closed
   let openList = new Array(6).fill(false);
   const [open, setOpen] = useState(openList);
 
-  const [lookThroughSelected, setLookThroughSelected] = useState(false);
-
+  //toggles boolean values at deired index and triggers rerender 
   function toggleOpen(toggleIndex){
     let newOpenList = open.map((op,index)=>(toggleIndex==index? !op:op));
     setOpen(newOpenList);
   }
 
+  //bool for what kind of data should be displayed
+  const [lookThroughSelected, setLookThroughSelected] = useState(false);
+
+  //bool for fading out the list as data changes
   const [fadeOut, setFadeOut] = useState(false);
 
+  //if Fadout is true, a css class is triggered that fades out the list
+  //after 200ms the lookthroughselected is changed which modifys the data and fades the list back in
   useEffect(() => {
     if (fadeOut) {
       setTimeout(() => {
@@ -178,6 +184,7 @@ function App() {
     }
   }, [fadeOut]);
 
+  //colors for piechart and dropdown list
   const colors = [
     "rgb(4,79,121)",
     "rgb(41,56,82)",
